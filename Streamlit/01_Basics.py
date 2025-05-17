@@ -1,5 +1,3 @@
-# A free and opensource framework to build and share (ML & DS) web apps
-
 # !pip install streamlit
 # !python -m streamlit run main.py
 
@@ -23,6 +21,12 @@ def hello_world():
 """, language="python")
 data = {"count": 3, "students": [{"Alice":11, "Bob":12, "Charlie":13}]}
 st.json(data)
+
+# Special Messages
+st.success("This is a success message!")
+st.error("This is an error message.")
+st.warning("This is a warning.")
+st.info("This is an informational message.")
 
 # Expander
 with st.expander("Expand for more details"):
@@ -90,6 +94,15 @@ st.write(f"You selected: {options}")
 date = st.date_input("Pick a date")
 st.write(f"Selected date: {date}")
 
+# Form
+with st.form("my_form"):
+    name = st.text_input("Enter your name")
+    age = st.number_input("Enter your age", min_value=0)
+    submitted = st.form_submit_button("Submit")
+if submitted:
+    st.write("Form submitted!")
+    st.write(f"Hello {name}, you are {age} years old!")
+
 # File uploader
 uploaded_file = st.file_uploader("Upload a file", type=["csv", "txt", "xlsx"])
 if uploaded_file is not None:
@@ -101,18 +114,16 @@ st.write(f"The selected color is {color}")
 
 # Progress bar
 import time
+st.subheader("Progress Bar")
 progress = st.progress(0)
 for i in range(100):
     time.sleep(0.05)
     progress.progress(i + 1)
 st.write("Task completed!")
 
-# Special Messages
-st.success("This is a success message!")
-st.error("This is an error message.")
-st.warning("This is a warning.")
-st.info("This is an informational message.")
-
-# Sidebar
-st.sidebar.title("Sidebar")
-st.sidebar.write("We are on Sidebar now!")
+st.subheader("Spinner")
+with st.spinner('Loading...'):
+    for i in range(100):
+        time.sleep(0.05)
+        progress.progress(i + 1)
+st.write("Task completed!")

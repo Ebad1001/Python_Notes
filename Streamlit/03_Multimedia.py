@@ -39,6 +39,42 @@ if st.button("Click to play video"):
 
 # Load video from file
 st.header("Video from file")
-video_file = open(".//assets//video2.mp4", "rb")
+video_file = open(".//assets//video.mp4", "rb")
 video_bytes = video_file.read()
 st.video(video_bytes)
+
+### TABLES ###
+import pandas as pd
+
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [24, 30, 22],
+    "Marks1": [67, 78, 89],
+    "Marks2": [67, 78, 89],
+    "Marks3": [67, 78, 89],
+    "Marks4": [67, 78, 89],
+    "Marks5": [67, 78, 89],
+    "Marks6": [67, 78, 89],
+    "Marks7": [67, 78, 89],
+    "Marks8": [67, 78, 89],
+    "Marks9": [67, 78, 89],
+    "Marks10": [67, 78, 89],
+    "Marks11": [67, 78, 89],
+    "Marks12": [67, 78, 89],
+}
+# df = pd.DataFrame(data)
+df = pd.read_csv(".//assets//data.csv")
+
+# Static table (no scroll/sort)
+st.header("Static Table (using st.table)")
+st.table(df)
+
+# Interactive table (sortable & scrollable)
+st.header("Interactive Table (using st.dataframe)")
+st.dataframe(df)
+
+st.header("Interactive Table (using st.write)")
+st.write(df)
+
+
+
