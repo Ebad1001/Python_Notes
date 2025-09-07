@@ -9,7 +9,7 @@ st.sidebar.write("We are on Sidebar now!")
 st.sidebar.button("We are on Sidebar now!")
 
 # Columns
-col1, col2, col3 = st.columns([1, 2, 1])  # col1 is twice as wide as col2
+col1, col2, col3 = st.columns([1, 2, 1])  # col2 is twice as wide as col1
 with col1:
     st.write("This is the first column")
     st.write("This is the first column")

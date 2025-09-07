@@ -75,6 +75,3 @@ st.dataframe(df)
 
 st.header("Interactive Table (using st.write)")
 st.write(df)
-
-
-
