@@ -5,8 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 # Generate data
 x = [0, 1, 2, 3, 4, 5]
-y = [0, 1, 4, 9, 16, 25]
-# y = x^2
+y = [0, 1, 4, 9, 16, 25] # y = x^2
 # Create the plot
 fig, ax = plt.subplots()
 ax.plot(x, y)
