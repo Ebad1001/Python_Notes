@@ -7,13 +7,16 @@ import streamlit as st
 st.title("This is a Title")  # Largest heading
 st.header("This is a Header")  # Secondary heading
 st.subheader("This is a Subheader")  # Tertiary heading
+
 # Plain Texts
 st.text("st.text: Some text") # to display plain text
 st.write("st.write: Some text") # more versatile than text, can handle (dataframes, markdowns, etc.)
+
 # Formatted Texts
 st.caption("st.caption: This is a caption.")
 st.markdown("st.markdown: **Bold text**, *italic text*, and click on the [link](https://www.google.com).")
 st.latex(r"st.latex: a^2 + b^2 = c^2")
+
 # Coding Texts
 st.code("""
 def hello_world():

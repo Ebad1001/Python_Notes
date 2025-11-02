@@ -4,12 +4,13 @@
 import streamlit as st
 import random as rn
 
+
 # Sidebar
 st.sidebar.title("Sidebar Title")
+st.sidebar.header("Sidebar")
 choice = st.sidebar.radio("Select a view:", ["Home", "About", "Contact"])
+st.title(f"This is the {choice} page!")
 
-st.header("Sidebar")
-st.write(f"This is the {choice} page!")
 
 # Columns
 st.header("Columns")
@@ -38,16 +39,43 @@ with tab2:
 with tab3:
     st.write("Information view")
 
-# Container: There are 2 ways to work with containers
+
+# Containers
 st.header("Containers")
+cont = st.container()
+st.write("First line")
+cont.write("Second line")
+st.write("Third line")
 
-# 1st way: Assigning container to a variable
-cont= st.container()
-st.write("This is outside the container")
-cont.line_chart([1, 2, 3])
-st.write("This is outside the container")
 
-# 2nd way: Using with context block
-with st.container():
-    st.write("Hello Hello Hello")
-    st.button("I am a Button")
+# Tables
+st.header("Tables")
+data = {
+    "Name": ["Alice", "Bob", "Charlie"],
+    "Age": [24, 30, 22],
+    "Marks1": [67, 78, 89],
+    "Marks2": [67, 78, 89],
+    "Marks3": [67, 78, 89],
+    "Marks4": [67, 78, 89],
+    "Marks5": [67, 78, 89],
+    "Marks6": [67, 78, 89],
+    "Marks7": [67, 78, 89],
+    "Marks8": [67, 78, 89],
+    "Marks9": [67, 78, 89],
+    "Marks10": [67, 78, 89],
+    "Marks11": [67, 78, 89],
+    "Marks12": [67, 78, 89],
+}
+
+# Static table (no scroll/sort/filter/search)
+st.header("Static Table (using st.table)")
+st.table(data)
+
+# Interactive table
+import pandas as pd
+df = pd.DataFrame(data)
+# df = pd.read_csv(".//assets//data.csv")
+st.header("Interactive Table (using st.dataframe)")
+st.dataframe(df)
+st.header("Interactive Table (using st.write)")
+st.write(df)
